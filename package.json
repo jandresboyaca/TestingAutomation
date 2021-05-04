@@ -1,0 +1,22 @@
+{
+  "name": "testingautomation",
+  "version": "1.0.0",
+  "description": "Proyecto de pruebas con cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jandresboyaca/TestingAutomation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jandresboyaca/TestingAutomation/issues"
+  },
+  "homepage": "https://github.com/jandresboyaca/TestingAutomation#readme",
+  "devDependencies": {
+    "cypress": "^7.2.0"
+  }
+}
