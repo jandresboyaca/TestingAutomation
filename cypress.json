@@ -1,1 +1,4 @@
-{}
+{
+    "projectId":"Registration-example",
+    "chromeWebSecurity": false
+}
