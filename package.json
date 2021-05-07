@@ -2,7 +2,6 @@
   "name": "testingautomation",
   "version": "1.0.0",
   "description": "Proyecto de pruebas con cypress",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +16,11 @@
   },
   "homepage": "https://github.com/jandresboyaca/TestingAutomation#readme",
   "devDependencies": {
-    "cypress": "^7.2.0"
+    "cypress": "^7.2.0",
+    "faker": "^5.5.3"
+  },
+  "dependencies": {
+    "cypress-log-to-output": "^1.1.2",
+    "cypress-plugin-tab": "^1.0.5"
   }
 }

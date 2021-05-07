@@ -1,1 +1,9 @@
-{}
+{
+  "integrationFolder": "./cypress/integration/tags",
+  "pluginsFile": "./cypress/plugins/index.js",
+  "pageLoadTimeout":120000,
+  "defaultCommandTimeout":120000,
+  "testFiles": "tags.js",
+  "videosFolder":"./results",
+  "chromeWebSecurity" : false
+}
