@@ -1,4 +1,8 @@
 {
     "projectId":"Registration-example",
-    "chromeWebSecurity": false
+    "chromeWebSecurity": false,
+
+    "baseUrl":"http://localhost:2368",
+    "username": "j.salcedos@uniandes.edu.co",
+    "password": "JoseManuel.2020" 
 }

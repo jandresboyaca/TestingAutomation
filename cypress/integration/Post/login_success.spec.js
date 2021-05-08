@@ -8,7 +8,7 @@ context('login success', () => {
     it('ingresar email', function() {
         cy.get('input[name="identification"]')
             .type(config.username)
-            .should('have.value', config.username)
+            .should('have.value',config.username)
     })
 
     it('ingresar password', function() {
