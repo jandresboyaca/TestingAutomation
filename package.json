@@ -4,6 +4,8 @@
   "description": "Proyecto de pruebas con cypress",
   "main": "index.js",
   "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --headless",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
