@@ -1,3 +1,11 @@
 node_modules
 .idea
 results/*
+krakenghost/kraken-mobile-*.gem
+krakenghost/example
+krakenghost/Gemfile.lock
+krakenghost/.byebug_history
+krakenghost/.DS_Store
+krakenghost/test_servers
+krakenghost/reports
+
