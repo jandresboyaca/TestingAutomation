@@ -37,8 +37,6 @@ context('Create tags', () => {
         // I can't test the feature 'cause cypress has a big bug https://github.com/cypress-io/cypress/issues/8507 and is has been fixed recently
         //https://github.com/cypress-io/cypress/pull/15995 or well I hope it.
         cy.get('button.gh-btn.gh-btn-blue').click();
-        cy.wait(2000)
-        cy.get('button.gh-btn.gh-btn-blue.gh-btn-icon.gh-btn-green.ember-view').should('be.visible');
     });
 
 })
