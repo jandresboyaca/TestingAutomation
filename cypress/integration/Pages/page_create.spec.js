@@ -47,20 +47,8 @@ context('Create Page', () => {
             .should('have.value',"Nueva pagina")
     })
 
-    xit('Publicar pagina', () => {
-        cy.get('.gh-publishmenu-trigger')
-            .click({force: true})
-        cy.get('.gh-publishmenu-button')
-            .click({force: true})
-    })
-    
     it('Cerrar pagina', () => {
-        cy.get('a[href*="#/pages/"]')
-        .should('have.id', 'blue link"')
-        .first()
-        .click()
-
+        cy.get('.fw3').click({force: true});
         cy.wait(2000)  
-        cy.url().should('eq', `${config.baseUrl}/ghost/#/pages/`) 
     })
 })
