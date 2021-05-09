@@ -1,26 +1,21 @@
 require('cypress-plugin-tab')
 var faker = require('faker');
+var util = require('../utils.js')
 
 const url = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
-const urlLogin = url + '/#/signin';
 const appName = Cypress.env('appName') || "ghost"
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
 
 
 describe(`${appName} under cypress happy path creation`, function () {
 
+    before(() => {
+        util.login();
+    })
+
     beforeEach(() => {
-        cy.viewport(1280, 800);
         Cypress.Cookies.preserveOnce(cookieSessionName);
-    });
-
-    it(`given a login with invalid email when login is successful then check error`, function () {
-        loginError();
-    });
-
-    it(`given a login when  login is successful then go into ${appName}`, function () {
-        login();
-    });
+    })
 
     it(`given a navigation bar when tags is valid then go into tags component`, function () {
         cy.get('nav.gh-nav').then(($divs) => {
@@ -61,37 +56,6 @@ describe(`${appName} under cypress happy path modification in list`, function ()
         invalidData();
     });
 });
-
-function login() {
-    cy.visit(urlLogin).then((win) => {
-        cy.wait(1000);
-    })
-
-    cy.get('#login').within(() => {
-        cy.get('input[name="identification"]').type('testte@test.com');
-        cy.get('input[name="password"]').type('N6.$!tMr-SBNV4N');
-        cy.get('button[id="ember12"]').click();
-        cy.url().should('eq', url + '/#/site')
-
-    });
-    cy.wait(3000);
-}
-
-function loginError() {
-    cy.visit(urlLogin).then((win) => {
-        cy.wait(1000);
-    })
-
-    cy.get('#login').within(() => {
-        cy.get('input[name="identification"]').type('testtetest.com');
-        cy.get('button[id="ember12"]').click();
-    });
-
-    cy.get('p.main-error').then(($elements) => {
-        expect($elements.first()[0].innerText.trim()).to.equal('Please fill out the form to sign in.'.trim());
-    });
-    cy.wait(3000);
-}
 
 function navigateIntoTags() {
     cy.wait(1000);
