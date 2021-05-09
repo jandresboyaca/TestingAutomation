@@ -1,4 +1,6 @@
 node_modules
+videos
+screenshots
 cypress/videos/*
 cypress/screenshots/*
 .idea
