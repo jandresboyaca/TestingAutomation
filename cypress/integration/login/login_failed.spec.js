@@ -8,23 +8,25 @@ context('Login failed', () => {
         cy.visit(loginUrl)
     })
 
-    it('ingresar email', function() {
+    it('ingresar email', function () {
         let email = faker.internet.email();
         cy.get('input[name="identification"]')
             .type(email)
             .should('have.value', email)
     })
 
-    it('ingresar password', function() {
+    it('ingresar password', function () {
         let password = faker.internet.password();
         cy.get('input[name="password"]')
             .type(password)
             .should('have.value', password)
     })
 
-    it('selecionar Sing In Btn', function() {
-        cy.get('[id="ember12"]').click()
-        cy.wait(3000)
+    it('selecionar Sing In Btn', function () {
+        cy.get('form').within(($form) => {
+            cy.root().submit();
+        });
+        cy.wait(1000)
         cy.get('p.main-error').then(($elements) => {
             expect($elements.first()[0].innerText.trim()).to.equal('Access denied.'.trim());
         });

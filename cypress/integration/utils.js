@@ -11,10 +11,10 @@ export const login = () => {
         cy.wait(1000);
     })
 
-    cy.get('#login').within(($form) => {
+    cy.get('form').within(($form) => {
         cy.get('input[name="identification"]').type(username).should('have.value', username);
         cy.get('input[name="password"]').type(password).should('have.value', password);
-        cy.get('button[id="ember12"]').click();
+        cy.root().submit();
         cy.url().should('eq', baseUrl + '/#/site')
     });
     cy.wait(1000);

@@ -9,9 +9,12 @@ context('Login failed', () => {
     });
 
     it('ingresar email', function () {
-        cy.get('#login').within(() => {
-            cy.get('input[name="identification"]').type(faker.lorem.word());
-            cy.get('button[id="ember12"]').click();
+        cy.get('form').within(() => {
+            let invalidEmail = faker.lorem.word();
+            cy.get('input[name="identification"]')
+                .type(invalidEmail)
+                .should('have.value', invalidEmail)
+            cy.root().submit();
         });
     });
 
