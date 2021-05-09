@@ -2,8 +2,8 @@
   "projectId": "Testing Automation",
   "chromeWebSecurity": false,
   "env": {
-    "username": "am.lopezr1@uniandes.edu.co",
-    "password": "Gh0st1234!",
-    "baseUrl": "http://localhost:2368/ghost"
+    "username": "manujua@gmail.com",
+    "password": "JoseManuel.2020",
+    "baseUrl": "http://localhost:2369/ghost"
   }
 }

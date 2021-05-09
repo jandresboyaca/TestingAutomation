@@ -1,6 +1,6 @@
 const username = Cypress.env('username') || ''
 const password = Cypress.env('password') || ''
-const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
+const baseUrl = Cypress.config('baseUrl') || "http://localhost:2369/ghost"
 const loginUrl = baseUrl + '/#/signin';
 
 export const login = () => {
