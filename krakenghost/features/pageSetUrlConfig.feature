@@ -11,6 +11,7 @@ Feature: Page Board Settings
     Then I enter "New Kraken Testing" into input field having class name "gh-editor-title"
     Then I enter "New Kraken Testing" into input field having class name "koenig-editor__editor"
     Then I click on element having xpath "//button[@title='Settings']//span"
+    Then I enter "UrlTestingKraken" into input field having id "url"
     Then I navigate to page "http://localhost:3001/ghost/#/pages"
 
   @user2 @web

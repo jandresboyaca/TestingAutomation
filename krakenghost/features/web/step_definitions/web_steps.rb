@@ -28,5 +28,15 @@ if ENV["ADB_DEVICE_ARG"].nil?
     @driver.find_element(:title, titlename).click
     sleep 2
   end
-end
 
+  Then(/^I enter "([^\"]*)" into input field having xpath "([^\"]*)"$/) do |text, xpath|
+    @driver.find_element(:xpath, xpath).send_keys(text)
+    sleep 2
+  end
+
+  Then(/^I click on element having xpath "([^\"]*)"$/) do |xpath|
+    @driver.find_element(:xpath, xpath).click
+    sleep 2
+  end
+
+end
