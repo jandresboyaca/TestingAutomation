@@ -1,4 +1,4 @@
-const config = require('./config');
+const config = require('../../../config');
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
 
 context('Eliminar Post', () => {
