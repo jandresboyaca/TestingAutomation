@@ -1,4 +1,9 @@
 {
-    "projectId":"Testing Automation",
-    "chromeWebSecurity": false
+  "projectId": "Testing Automation",
+  "chromeWebSecurity": false,
+  "env": {
+    "username": "testte@test.com",
+    "password": "N6.$!tMr-SBNV4N",
+    "baseUrl": "http://localhost:2368/ghost"
+  }
 }
