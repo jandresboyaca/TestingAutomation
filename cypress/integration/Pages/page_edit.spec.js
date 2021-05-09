@@ -1,13 +1,11 @@
-const config = require('../../../config');
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
+const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
+var faker = require('faker');
+var util = require('../utils.js')
 
 context('Editar Page', () => {
     before(() => {
-        cy.visit(`${config.baseUrl}/ghost/#/signin`)
-    })
-
-    beforeEach(() => {
-        Cypress.Cookies.preserveOnce(cookieSessionName);
+        util.login();
     })
 
     it('Login', function() {
