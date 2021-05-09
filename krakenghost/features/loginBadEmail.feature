@@ -2,7 +2,7 @@ Feature: Shared board connection
 
   @user1 @web
   Scenario: As a first user
-    Given I navigate to page "http://localhost:3001/ghost/"
+    Given I navigate to page "http://localhost:3002/ghost/"
     Then I enter "error" into input field having class name "email"
     Then I enter "123" into input field having class name "password"
     Then I click on element having css class "login"
