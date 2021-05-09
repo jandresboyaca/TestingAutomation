@@ -17,22 +17,20 @@ context('Editar paage unpublished', () => {
         cy.url().should('eq', `${baseUrl}/#/pages`)
     })
 
-    it('Selecionar page', () => {
+    it('Seleccionar page', () => {
+        cy.wait(1000)
         cy.get('li.gh-list-row.gh-posts-list-item')
-            .find('span.gh-content-status-draft')
+            .find('span.gh-content-status-published')
             .first()
             .click({force: true})
-
-        cy.wait(2000)
+        cy.wait(1000)
     })
 
     it('Unpublished page', () => {
         cy.wait(1000)
-        cy.get('.gh-publishmenu')
-            .click()
+        cy.get('.gh-publishmenu').click()
         cy.wait(1000)
         cy.get('button.gh-publishmenu-button').click()
-
         cy.wait(1000)
         cy.get('button.gh-btn-green').should('be.visible');
     })
