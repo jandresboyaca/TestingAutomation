@@ -1,19 +1,18 @@
-Feature: Shared board connection
+Feature: Post Drafts and Settings
 
   @user1 @web
-  Scenario: As a first user
-    Given I navigate to page "http://localhost:3001/ghost/"
-    Then I enter "c.castiblancoc@uniandes.edu.co" into input field having class name "email"
-    Then I enter "1234567890*" into input field having class name "password"
+  Scenario: Post Drafts and Settings
+    Given I navigate to page "<GHOST_URL_SIGIN>"
+    Then I enter "<GHOST_USER>" into input field having class name "email"
+    Then I enter "<GHOST_PASSWORD>" into input field having class name "password"
     Then I click on element having css class "login"
     Then I click on element having css selector "a[href="#/posts/"]"
     Then I click on element having css selector "a[href="#/editor/post/"]"
-    Then I enter "New Kraken Testing" into input field having class name "gh-editor-title"
-    Then I click on element having css selector "svg[viewBox="0 0 16 16"]"
-    Then I navigate to page "http://localhost:3001/ghost/#/posts"
-    Then I click on element having css selector "a[href="#/posts/?type=draft"]"
-    Then I click on element having css selector "a[href="#/posts/?type=scheduled"]"
-    Then I click on element having css selector "a[href="#/posts/?type=published"]"
+    Then I enter "<GHOST_STRING_DEFAULT>" into input field having class name "gh-editor-title"
+    Then I enter "<GHOST_STRING_DEFAULT>" into input field having class name "koenig-editor__editor"
+    Then I click on element having css class "post-settings"
+    Then I click on element having xpath "//button[@class='gh-btn gh-btn-hover-red gh-btn-icon settings-menu-delete-button']//span"
+    Then I click on element having xpath "//button[@class='gh-btn gh-btn-red gh-btn-icon ember-view']//span"
 
   @user2 @web
   Scenario: As a second user I wait for user 1 to say hi

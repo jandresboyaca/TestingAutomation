@@ -1,16 +1,18 @@
-Feature: Shared board connection
+Feature: Post Drafts and Settings
 
   @user1 @web
-  Scenario: As a first user
-    Given I navigate to page "http://localhost:3001/ghost/"
-    Then I enter "c.castiblancoc@uniandes.edu.co" into input field having class name "email"
-    Then I enter "1234567890*" into input field having class name "password"
+  Scenario: Post Drafts and Settings
+    Given I navigate to page "<GHOST_URL_SIGIN>"
+    Then I enter "<GHOST_USER>" into input field having class name "email"
+    Then I enter "<GHOST_PASSWORD>" into input field having class name "password"
     Then I click on element having css class "login"
     Then I click on element having css selector "a[href="#/posts/"]"
     Then I click on element having css selector "a[href="#/editor/post/"]"
-    Then I enter "New Kraken Testing" into input field having class name "gh-editor-title"
-    Then I click on element having css selector "button"
-    Then I click on element having title "Settings"
+    Then I enter "<GHOST_STRING_DEFAULT>" into input field having class name "gh-editor-title"
+    Then I enter "<GHOST_STRING_DEFAULT>" into input field having class name "koenig-editor__editor"
+    Then I click on element having css class "post-settings"
+    Then I click on element having css class "close"
+    Then I click on element having css selector "a[href="#/posts/"]"
 
   @user2 @web
   Scenario: As a second user I wait for user 1 to say hi
