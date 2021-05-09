@@ -1,4 +1,4 @@
-const baseUrl = Cypress.config('baseUrl') || "http://localhost:2369/ghost"
+const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
 const util = require('../utils.js')
 const faker = require('faker')
 
