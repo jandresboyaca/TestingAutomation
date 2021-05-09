@@ -2,8 +2,8 @@
   "projectId": "Testing Automation",
   "chromeWebSecurity": false,
   "env": {
-    "username": "manujua@gmail.com",
-    "password": "JoseManuel.2020",
-    "baseUrl": "http://localhost:2369/ghost"
+    "username": "testte@test.com",
+    "password": "N6.$!tMr-SBNV4N",
+    "baseUrl": "http://localhost:2368/ghost"
   }
 }

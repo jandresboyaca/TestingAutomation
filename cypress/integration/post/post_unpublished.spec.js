@@ -1,5 +1,5 @@
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
-const baseUrl = Cypress.config('baseUrl') || "http://localhost:2369/ghost"
+const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
 var util = require('../utils.js')
 
 context('Editar Post', () => {
@@ -27,21 +27,22 @@ context('Editar Post', () => {
     })
 
     it('Unpublished post', () => {
+        cy.wait(1000)
         cy.get('.gh-publishmenu')
         .click()
-
+        cy.wait(1000)
         cy.get('section.gh-publishmenu-content.gh-publishmenu-section')
         .within(() => {
             cy.get('.gh-publishmenu-radio-button')
             .first()
             .click()
         })
-
-        cy.get('button')
-        .should('have.class', 'gh-publishmenu-button')
-        .first()
+        cy.wait(1000)
+        cy.get('.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.ember-view')
         .click({
             force:true
         })
+        cy.wait(2000)
+        cy.get('.gh-btn.gh-btn-blue.gh-publishmenu-button.gh-btn-icon.gh-btn-green.ember-view').should('be.visible');
     })
 })

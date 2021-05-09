@@ -29,14 +29,14 @@ context('Create Page', () => {
     })
 
     it('Agregar datos a la nueva page', () => {
+        let sentence = faker.lorem.sentence();
         cy.get('textarea')
             .first()
-            .type("Nueva pagina")
-            .should('have.value',"Nueva pagina")
+            .type(sentence)
+            .should('have.value',sentence)
     })
 
-    it('Cerrar pagina', () => {
-        cy.get('.fw3').click({force: true});
-        cy.wait(2000)  
+    it('Publicar pagina', () => {
+        cy.get('div.koenig-editor__editor').click();
     })
 })
