@@ -1,7 +1,7 @@
-Feature: Page Board
+Feature: Page Board Settings
 
   @user1 @web
-  Scenario: Page Board
+  Scenario: Page Board Settings
     Given I navigate to page "http://localhost:3001/ghost/"
     Then I enter "c.castiblancoc@uniandes.edu.co" into input field having class name "email"
     Then I enter "1234567890*" into input field having class name "password"
@@ -11,6 +11,7 @@ Feature: Page Board
     Then I enter "New Kraken Testing" into input field having class name "gh-editor-title"
     Then I enter "New Kraken Testing" into input field having class name "koenig-editor__editor"
     Then I click on element having css selector "button"
+    Then I click on element having title "Settings"
     Then I navigate to page "http://localhost:3001/ghost/#/pages"
 
   @user2 @web
