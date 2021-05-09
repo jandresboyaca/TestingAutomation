@@ -44,8 +44,10 @@ context(`Edit Invalid tag`, function () {
         let text1 = faker.lorem.paragraph();
         let text2 = faker.lorem.paragraph();
         let text3 = faker.lorem.paragraph();
+        let text4 = faker.lorem.paragraph();
+        let text5 = faker.lorem.paragraph();
         cy.get('#tag-description').clear({force: true})
-        cy.get('#tag-description').type(text1 + text2 + text3, {force: true});
+        cy.get('#tag-description').type(text1 + text2 + text3 + text4 + text5, {force: true});
         cy.get('.word-count').first().should('have.css', 'color', 'rgb(226, 84, 64)');
     });
 

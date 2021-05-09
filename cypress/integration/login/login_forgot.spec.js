@@ -17,6 +17,7 @@ context('Login forgot', () => {
     });
 
     it('validar error', function () {
+        cy.wait(2000);
         cy.get('p.main-error').then(($elements) => {
             expect($elements.first()[0].innerText.trim()).to.equal('User not found. '.trim());
         });
