@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jandresboyaca/TestingAutomation#readme",
   "devDependencies": {
-    "cypress": "^4.2.0"
+    "cypress": "^4.2.0",
+    "faker": "^5.5.3"
   }
 }
