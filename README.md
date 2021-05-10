@@ -1,3 +1,17 @@
+# Funcionalidades
+
+1. Administración de post: Modulo de administración de post, en donde se pueden evidenciar todos los posts actuales y sus posibles estados; permite realizar la programación del post e inclusive dejarlos como borradores
+2. Administración de paginas: Modulo de administración de paginas, similar a los posts, las paginas permitirán un espacio único para el contenido que se desee en un URL general
+3. Administración de tags: Modulo de administración de tags, es el encargado de tipificar las publicaciones que se desee
+4. Administración de staff: Personal a cargo del blog con diferentes roles y responsabilidades como lo pueden ser 
+5. Login
+
+# Escenarios de pruebas
+Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/wiki/Escenarios).
+
+# Issues
+Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/issues)
+
 # How to run it?
 
 ## Initial Config
