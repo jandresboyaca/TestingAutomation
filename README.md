@@ -9,6 +9,9 @@
 # Escenarios de pruebas
 Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/wiki/Escenarios).
 
+# pros y contras 
+Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/wiki/Pro-Contra).
+
 # Issues
 Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/issues)
 
