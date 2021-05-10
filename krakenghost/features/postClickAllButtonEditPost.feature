@@ -11,11 +11,3 @@ Feature: Shared board connection
     Then I enter "<GHOST_STRING_DEFAULT>" into input field having class name "gh-editor-title"
     Then I click on element having css selector "button"
     Then I click on element having css selector "a[href="#/posts/"]"
-
-  @user2 @web
-  Scenario: As a second user I wait for user 1 to say hi
-    Given I wait for a signal containing "hi" for 60 seconds
-    Given I navigate to page with the url stored in the variable
-    Then I enter "Kraken2" into input field having id "nickName"
-    Then I click on element having css selector "#joinBoard>button"
-    Then I start a monkey with 8 events
