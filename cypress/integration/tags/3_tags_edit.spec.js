@@ -34,8 +34,8 @@ context('Edit tags', () => {
         cy.wait(1000)
         cy.get('a.gh-list-data.gh-tag-list-title.ember-view').first().within(($e) => {
             cy.get('h3').then(($e) => text = $e.text().trim())
+            cy.wait(1000)
         }).click({force: true})
-        cy.wait(1000)
 
         cy.get('.gh-canvas-title').then(($e) => {
             expect($e[0].innerText.trim()).to.equal(`Tags\n${text}`);
