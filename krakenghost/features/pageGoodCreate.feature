@@ -11,4 +11,3 @@ Feature: Page Board
     Then I enter "<GHOST_STRING_DEFAULT>" into input field having class name "gh-editor-title"
     Then I enter "<GHOST_STRING_DEFAULT>" into input field having class name "koenig-editor__editor"
     Then I click on element having css selector "button"
-    Then I click on element having css selector "a[href="#/pages/"]"
