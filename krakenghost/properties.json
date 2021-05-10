@@ -1,0 +1,8 @@
+{
+  "@user1": {
+    "GHOST_URL_SIGIN":"http://localhost:3002/ghost/#/signin",
+    "GHOST_USER":"c.castiblancoc@uniandes.edu.co",
+    "GHOST_PASSWORD":"1234567890*",
+    "GHOST_STRING_DEFAULT":"New Kraken Testing"
+  }
+}
