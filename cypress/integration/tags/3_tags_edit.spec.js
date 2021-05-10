@@ -15,10 +15,14 @@ context('Edit tags', () => {
 
     it(`given a navigation bar when tags is valid then go into tags component`, function () {
         cy.get("a[href$='#/tags/']").click()
+        cy.wait(1000)
         cy.url().should('eq', baseUrl + '/#/tags')
+        cy.wait(1000)
         cy.get('.gh-canvas-title').then(($e) => {
             expect($e[0].innerText).to.equal('Tags');
         });
+        cy.wait(1000)
+
         cy.get('.gh-list-row').then(($elements) => {
             expect($elements.length).to.greaterThan(0);
         });
@@ -27,13 +31,16 @@ context('Edit tags', () => {
 
     it('given an tag to edit when tag exist then edit tag', function () {
         let text;
+        cy.wait(1000)
         cy.get('a.gh-list-data.gh-tag-list-title.ember-view').first().within(($e) => {
             cy.get('h3').then(($e) => text = $e.text().trim())
+            cy.wait(1000)
         }).click({force: true})
 
         cy.get('.gh-canvas-title').then(($e) => {
             expect($e[0].innerText.trim()).to.equal(`Tags\n${text}`);
         });
+        cy.wait(1000)
         cy.get('#tag-description').clear({force: true})
         cy.wait(1000)
         cy.get('#tag-description').type(faker.lorem.paragraph(), {force: true});

@@ -1,6 +1,7 @@
 node_modules
 .idea
 results/*
+package-lock.json
 krakenghost/kraken-mobile-*.gem
 krakenghost/example
 krakenghost/Gemfile.lock

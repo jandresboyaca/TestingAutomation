@@ -17,37 +17,44 @@ context(`Edit Invalid tag`, function () {
         cy.get('nav.gh-nav').within(($divs) => {
             cy.wait(1000);
             cy.get("a[href$='#/tags/']").click()
+            cy.wait(1000);
             cy.url().should('eq', baseUrl + '/#/tags')
         });
     });
 
     it(`given a section tags when you need internal tags then click section`, function () {
+        cy.wait(1000);
         cy.get('.gh-contentfilter.gh-btn-group').then(($e) => {
+            cy.wait(1000);
             cy.get("span:contains('Internal tags')").click();
         });
+        cy.wait(1000);
         cy.get('.no-posts-box > .no-posts').then(($divs) => {
+            cy.wait(1000);
             expect(cy.get("a[href$='#/tags/new/']")).to.not.undefined;
         });
     });
 
     it(`given a section tags when you need internal tags with a limit of characters then click section`, function () {
+        cy.wait(1000);
         cy.get('.gh-contentfilter.gh-btn-group').then(($e) => {
+            cy.wait(1000);
             cy.get("span:contains('Internal tags')").click();
         })
+        cy.wait(1000);
         cy.get('.no-posts-box > .no-posts').then(($divs) => {
+            cy.wait(1000);
             expect(cy.get("a[href$='#/tags/new/']")).to.not.undefined;
             cy.get("a[href$='#/tags/new/']").first().click();
         });
     });
 
     it(`given a internal tags when the data is invalid then throw error `, function () {
-        let text1 = faker.lorem.paragraph();
-        let text2 = faker.lorem.paragraph();
-        let text3 = faker.lorem.paragraph();
-        let text4 = faker.lorem.paragraph();
-        let text5 = faker.lorem.paragraph();
+        let text1 = 'a'.repeat(501);
+        cy.wait(1000);
         cy.get('#tag-description').clear({force: true})
-        cy.get('#tag-description').type(text1 + text2 + text3 + text4 + text5, {force: true});
+        cy.get('#tag-description').type(text1, {force: true});
+        cy.wait(1000);
         cy.get('.word-count').first().should('have.css', 'color', 'rgb(226, 84, 64)');
     });
 
@@ -56,6 +63,7 @@ context(`Edit Invalid tag`, function () {
         cy.get("a[href$='#/tags/?type=internal']").then(($e) => {
             $e[0].click();
         });
+        cy.wait(1000);
         cy.url().should('eq', baseUrl + '/#/tags?type=internal');
     });
 });

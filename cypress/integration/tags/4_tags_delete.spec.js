@@ -15,7 +15,9 @@ context('Edit tags', () => {
 
     it(`given a navigation bar when tags is valid then go into tags component`, function () {
         cy.get("a[href$='#/tags/']").click()
+        cy.wait(1000);
         cy.url().should('eq', baseUrl + '/#/tags')
+        cy.wait(1000);
         cy.get('.gh-canvas-title').then(($e) => {
             expect($e[0].innerText).to.equal('Tags');
         });
@@ -27,6 +29,7 @@ context('Edit tags', () => {
 
     it('given an tag to delete when tag exist then delete tag', function () {
         let text;
+        cy.wait(1000);
         cy.get('a.gh-list-data.gh-tag-list-title.ember-view').first().within(($e) => {
             cy.get('h3').then(($e) => text = $e.text().trim())
         }).click({force: true})
