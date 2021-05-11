@@ -21,15 +21,15 @@ Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/issues
 
 1. docker run -v /var/lib/ghost/content  --entrypoint "bin/sh" --name data-ghost deploysoft/ghost-backup:1
 2. docker run -p 2368:2368 --volumes-from data-ghost deploysoft/ghost:3.3.0
+3. git clone https://github.com/jandresboyaca/TestingAutomation.git
 
 
 ## Cypress
 
-1. git clone https://github.com/jandresboyaca/TestingAutomation.git
-2. cd  TestingAutomation
-3. npm install
-4. node_modules/.bin/cypress run
-5. **enjoy it :)**
+1. cd  TestingAutomation
+2. npm install
+3. node_modules/.bin/cypress run
+4. **enjoy it :)**
 
 
 ## Kraken
