@@ -10,3 +10,6 @@ krakenghost/.DS_Store
 krakenghost/test_servers
 krakenghost/reports
 
+vtr/result/backstop/backstop_data/bitmaps_reference/*
+vtr/result/backstop/backstop_data/bitmaps_test/*
+vtr/result/backstop/backstop_data/html_report/*
