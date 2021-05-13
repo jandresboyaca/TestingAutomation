@@ -1,7 +1,8 @@
-Feature: Tags Board
+Feature: Tag Getting Started
 
   @user1 @web
-  Scenario: Tags Board
+  Scenario: Tag Getting Started
+    Given I set scenario "tagGettingStarted"
     Given I navigate to page "<GHOST_URL_SIGIN>"
     Then I enter "<GHOST_USER>" into input field having class name "email"
     Then I enter "<GHOST_PASSWORD>" into input field having class name "password"

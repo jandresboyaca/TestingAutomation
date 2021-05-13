@@ -2,6 +2,7 @@ Feature: Post Drafts and Settings
 
   @user1 @web
   Scenario: Post Drafts and Settings
+    Given I set scenario "postGoodDraftsAndSettings"
     Given I navigate to page "<GHOST_URL_SIGIN>"
     Then I enter "<GHOST_USER>" into input field having class name "email"
     Then I enter "<GHOST_PASSWORD>" into input field having class name "password"

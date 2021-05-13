@@ -1,7 +1,8 @@
-Feature: Post board
+Feature: Post Good Drafts
 
   @user1 @web
-  Scenario: As Post Board
+  Scenario: Post Good Drafts
+    Given I set scenario "postGoodDrafts"
     Given I navigate to page "<GHOST_URL_SIGIN>"
     Then I enter "<GHOST_USER>" into input field having class name "email"
     Then I enter "<GHOST_PASSWORD>" into input field having class name "password"
