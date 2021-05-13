@@ -49,10 +49,10 @@ if ENV["ADB_DEVICE_ARG"].nil?
 
   # Hooks
   AfterStep do |_scenario|
-    Dir.mkdir("./tvr") unless File.exist?("./tvr")
-    Dir.mkdir("./tvr/#{$versionapp}") unless File.exist?("./tvr/#{$versionapp}")
-    Dir.mkdir("./tvr/#{$versionapp}/#{$featurescenariostep}") unless File.exist?("./tvr/#{$versionapp}/#{$featurescenariostep}")
-    path = "./tvr/#{$versionapp}/#{$featurescenariostep}/#{$featurescenariostep}_#{_id += 1}.png"
+    Dir.mkdir("./vrt") unless File.exist?("./vrt")
+    Dir.mkdir("./vrt/#{$versionapp}") unless File.exist?("./vrt/#{$versionapp}")
+    Dir.mkdir("./vrt/#{$versionapp}/#{$featurescenariostep}") unless File.exist?("./vrt/#{$versionapp}/#{$featurescenariostep}")
+    path = "./vrt/#{$versionapp}/#{$featurescenariostep}/#{$featurescenariostep}_#{_id += 1}.png"
     @driver.save_screenshot(path)
     embed(path, 'image/png', File.basename(path))
   end
