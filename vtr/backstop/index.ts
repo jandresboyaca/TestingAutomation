@@ -1,23 +1,42 @@
 import fs from "fs";
-import backstop, {Config} from "backstopjs";
+import backstop, {Config, Scenario} from "backstopjs";
 
-let strings = fs.readdirSync('referencia');
-strings.forEach((img) => {
-    const options: Config = getOption(img);
-    backstop('reference', {config: options}).then(() => {
-        backstop('test', {config: options});
+let resource = 'referencia/';
+let resourceFiles = fs.readdirSync(resource);
+
+let versionBase = resourceFiles[0];
+let versionToCompare = resourceFiles[1];
+let arrayScenariosBS: Scenario[] = [];
+console.log(versionBase, versionToCompare);
+
+fs.readdir(resource + versionBase, (err, files) => {
+    files.forEach(featurePath => {
+
+        fs.readdirSync(`${resource + versionBase}/${featurePath}`).forEach(screenShot => {
+
+            let base = `/${resource + versionBase}/${featurePath}/${screenShot}`;
+
+            let toCompare = `/${resource + versionToCompare}/${featurePath}/${screenShot}`;
+
+            arrayScenariosBS.push({
+                label: base,
+                url: toCompare,
+                referenceUrl: base,
+            })
+        });
     });
 });
 
-function getOption(img: string): Config {
+backstop('reference', {config: getOption(arrayScenariosBS)}).then(() => {
+    backstop('test', {config: getOption(arrayScenariosBS)});
+});
+
+
+function getOption(arrayScenariosBS: Scenario[]): Config {
     return {
         id: "backstop_default",
         viewports: [{label: "pc", width: 1920, height: 1080}],
-        scenarios: [{
-            label: img,
-            url: "/referencia/abase.png",
-            referenceUrl: "/referencia/" + img,
-        }],
+        scenarios: arrayScenariosBS,
         paths: {
             bitmaps_reference: "vtr/result/backstop/backstop_data/bitmaps_reference",
             bitmaps_test: "vtr/result/backstop/backstop_data/bitmaps_test",
