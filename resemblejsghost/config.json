@@ -1,0 +1,21 @@
+{
+  "url":"https://github.com/jandresboyaca/TestingAutomation",
+  "dir":"vrt",
+  "firstVersion":"3.0.0",
+  "secondVersion":"4.0.0",
+  "options":{
+    "output": {
+      "errorColor": {
+        "red": 255,
+        "green": 0,
+        "blue": 255
+      },
+      "errorType": "movement",
+      "largeImageThreshold": 1200,
+      "useCrossOrigin": false,
+      "outputDiff": true
+    },
+    "scaleToSameSize": true,
+    "ignore": "antialiasing"
+  }
+}
