@@ -12,17 +12,20 @@ console.log(versionBase, versionToCompare);
 fs.readdir(resource + versionBase, (err, files) => {
     files.forEach(featurePath => {
 
-        fs.readdirSync(`${resource + versionBase}/${featurePath}`).forEach(screenShot => {
+        fs.readdirSync(`${resource + versionBase}/${featurePath}`).forEach(scenario => {
 
-            let base = `/${resource + versionBase}/${featurePath}/${screenShot}`;
+            fs.readdirSync(`${resource + versionBase}/${featurePath}/${scenario}`).forEach(screenShoot => {
+                let base = `/${resource + versionBase}/${featurePath}/${scenario}/${screenShoot}`;
 
-            let toCompare = `/${resource + versionToCompare}/${featurePath}/${screenShot}`;
+                let toCompare = `/${resource + versionToCompare}/${featurePath}/${scenario}/${screenShoot}`;
 
-            arrayScenariosBS.push({
-                label: base,
-                url: toCompare,
-                referenceUrl: base,
-            })
+                arrayScenariosBS.push({
+                    label: base,
+                    url: toCompare,
+                    referenceUrl: base,
+                });
+            });
+
         });
     });
 });
