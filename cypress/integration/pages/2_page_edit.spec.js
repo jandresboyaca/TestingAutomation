@@ -1,7 +1,8 @@
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
-const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
+const baseUrl = Cypress.env('baseUrl') || "http://localhost:2368/ghost"
 var util = require('../utils.js')
 var faker = require('faker');
+let stepName = '';
 
 context('Editar Page', () => {
     before(() => {
@@ -12,13 +13,19 @@ context('Editar Page', () => {
         Cypress.Cookies.preserveOnce(cookieSessionName);
     })
 
+    afterEach(() => {
+        util.screenshot("Page","EditarPage", stepName)
+    })
+
     it('Abrir lista de Page', () => {
+        stepName = "AbrirPage"
         cy.visit(`${baseUrl}/#/pages`)
         cy.wait(2000)
         cy.url().should('eq', `${baseUrl}/#/pages`)
     })
 
     it('Selecionar Page', () => {
+        stepName = "SelecionarPage"
         cy.get('li.gh-list-row.gh-posts-list-item.ember-view')
             .first().click({force: true})
             .within(() => {
@@ -30,6 +37,7 @@ context('Editar Page', () => {
     })
 
     it('Editar titulo Page', () => {
+        stepName = "EditarPage"
         let sentence = faker.lorem.sentence();
         cy.get('textarea')
             .first()
@@ -39,6 +47,7 @@ context('Editar Page', () => {
     })
 
     it('Cerrar pagina', () => {
+         stepName = "CerrarPage"
         cy.get('.gh-btn.gh-btn-outline.gh-publishmenu-trigger.ember-basic-dropdown-trigger.ember-view')
             .click({force: true})
 

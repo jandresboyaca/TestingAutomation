@@ -2,7 +2,7 @@ require('cypress-plugin-tab')
 var faker = require('faker');
 var util = require('../utils.js')
 
-const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
+const baseUrl = Cypress.env('baseUrl') || "http://localhost:2368/ghost"
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
 
 context(`Edit Invalid tag`, function () {

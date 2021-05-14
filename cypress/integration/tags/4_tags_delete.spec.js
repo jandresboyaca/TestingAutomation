@@ -1,5 +1,5 @@
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
-const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
+const baseUrl = Cypress.env('baseUrl') || "http://localhost:2368/ghost"
 var faker = require('faker');
 var util = require('../utils.js')
 

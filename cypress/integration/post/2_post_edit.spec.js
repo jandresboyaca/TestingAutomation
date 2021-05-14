@@ -1,8 +1,9 @@
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
-const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
+const baseUrl = Cypress.env('baseUrl') || "http://localhost:2368/ghost"
 var util = require('../utils.js')
+let stepName = '';
 
-context('Editar Post', () => {
+context('Unpublished Post', () => {
     before(() => {
         util.login();
     })
@@ -11,13 +12,19 @@ context('Editar Post', () => {
         Cypress.Cookies.preserveOnce(cookieSessionName);
     })
 
+    afterEach(() => {
+        util.screenshot("Post","UnpublishedPost", stepName)
+    })
+
     it('Abrir lista de Post', () => {
+        stepName = "AbrirPostList"
         cy.visit(`${baseUrl}/#/posts`)
         cy.wait(2000)
         cy.url().should('eq', `${baseUrl}/#/posts`)
     })
 
     it('Selecionar post', () => {
+        stepName = "SelecionarPost"
         cy.get('li.gh-list-row.gh-posts-list-item')
             .first()
             .within(() => {
@@ -29,6 +36,7 @@ context('Editar Post', () => {
     })
 
     it('Editar titulo post', () => {
+        stepName = "EditarPost"
          cy.get('textarea')
             .first()
             .clear()
@@ -37,6 +45,7 @@ context('Editar Post', () => {
     })
 
     it('Cerrar pagina', () => {
+        stepName = "CerrarPost"
         cy.get('.fw3').click({force: true});
     })
 })

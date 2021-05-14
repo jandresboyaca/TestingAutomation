@@ -1,6 +1,7 @@
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
-const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
+const baseUrl = Cypress.env('baseUrl') || "http://localhost:2368/ghost"
 var util = require('../utils.js')
+let stepName = '';
 
 context('Eliminar Page', () => {
     before(() => {
@@ -10,14 +11,20 @@ context('Eliminar Page', () => {
     beforeEach(() => {
         Cypress.Cookies.preserveOnce(cookieSessionName);
     })
+    
+    afterEach(() => {
+        util.screenshot("Page","EliminarPage", stepName)
+    })
 
     it('Abrir lista de Page', () => {
+        stepName = "AbrirPage"
         cy.visit(`${baseUrl}/#/pages`)
         cy.wait(2000)
         cy.url().should('eq', `${baseUrl}/#/pages`)
     })
 
     it('Selecionar Page', () => {
+        stepName = "SelecionarPage"
         cy.get('li.gh-list-row.gh-posts-list-item')
             .first()
             .within(() => {
@@ -29,6 +36,7 @@ context('Eliminar Page', () => {
     })
 
     it('Eliminar Page', () => {
+        stepName = "EliminarPage"
         cy.get('button[title="Settings"]')
             .click()
         cy.wait(500)
