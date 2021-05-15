@@ -2,6 +2,7 @@ const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-s
 const baseUrl = Cypress.env('baseUrl') || "http://localhost:2368/ghost"
 var faker = require('faker');
 var util = require('../utils.js')
+let stepName = '';
 
 
 context('Create tags', () => {
@@ -13,7 +14,12 @@ context('Create tags', () => {
         Cypress.Cookies.preserveOnce(cookieSessionName);
     })
 
+    afterEach(() => {
+        util.screenshot("Tags","CreateTagSuccess", stepName)
+    })
+
     it(`given a navigation bar when tags is valid then go into tags component`, function () {
+        stepName = "AbrirTagList"
         cy.get("a[href$='#/tags/']").click()
         cy.wait(1000);
         cy.url().should('eq', baseUrl + '/#/tags')
@@ -24,6 +30,7 @@ context('Create tags', () => {
     });
 
     it('given an action of create when create values is valid then create tag', function () {
+        stepName = "CrearTag"
         let tagName = faker.lorem.word();
         cy.get('.ember-view.gh-btn.gh-btn-green').click();
         cy.wait(1000);

@@ -2,7 +2,7 @@ const baseUrl = Cypress.env('baseUrl')
 const loginUrl = baseUrl + '/#/signin';
 const username = Cypress.env('username') || ''
 const password = Cypress.env('password') || ''
-const version = Cypress.env('version') || 'GhosthVersion3';
+const version = Cypress.env('version') || 'GhostVersion3';
 let stepName = '';
 
 context('login success', () => {

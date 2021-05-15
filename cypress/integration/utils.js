@@ -2,7 +2,7 @@ const username = Cypress.env('username') || ''
 const password = Cypress.env('password') || ''
 const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
 const loginUrl = baseUrl + '/#/signin';
-const version = Cypress.env('version') || 'GhosthVersion3';
+const version = Cypress.env('version') || 'v3.3.0';
 
 export const login = () => {
     cy.clearCookies();

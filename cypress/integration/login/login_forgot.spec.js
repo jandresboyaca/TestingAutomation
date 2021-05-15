@@ -2,7 +2,7 @@ var faker = require('faker');
 
 const baseUrl = Cypress.env('baseUrl') 
 const loginUrl = baseUrl + '/#/signin';
-const version = Cypress.env('version') || 'GhosthVersion3';
+const version = Cypress.env('version') || 'GhostVersion3';
 let stepName = '';
 
 context('Login forgot', () => {
