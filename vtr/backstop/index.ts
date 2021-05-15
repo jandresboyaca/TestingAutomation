@@ -1,7 +1,7 @@
 import fs from "fs";
 import backstop, {Config, Scenario} from "backstopjs";
 
-let resource = 'referencia/';
+let resource = 'reference/';
 let resourceFiles = fs.readdirSync(resource);
 
 let versionBase = resourceFiles[0];
