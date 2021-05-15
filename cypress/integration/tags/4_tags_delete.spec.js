@@ -1,8 +1,8 @@
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
-const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
+const baseUrl = Cypress.env('baseUrl') || "http://localhost:2368/ghost"
 var faker = require('faker');
 var util = require('../utils.js')
-
+let stepName = '';
 
 context('Edit tags', () => {
     before(() => {
@@ -13,7 +13,12 @@ context('Edit tags', () => {
         Cypress.Cookies.preserveOnce(cookieSessionName);
     })
 
+    afterEach(() => {
+        util.screenshot("Tags","DeleteTag", stepName)
+    })
+
     it(`given a navigation bar when tags is valid then go into tags component`, function () {
+        stepName = "AbrirTagList"
         cy.get("a[href$='#/tags/']").click()
         cy.wait(1000);
         cy.url().should('eq', baseUrl + '/#/tags')
@@ -28,6 +33,7 @@ context('Edit tags', () => {
     });
 
     it('given an tag to delete when tag exist then delete tag', function () {
+        stepName = "DeleteTag"
         cy.wait(1000);
         cy.get('a.gh-list-data.gh-tag-list-title.ember-view').first().click({force: true})
 

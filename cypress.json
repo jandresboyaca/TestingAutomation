@@ -4,6 +4,7 @@
   "env": {
     "username": "admin@test.com",
     "password": "N6.$!tMr-SBNV4N",
-    "baseUrl": "http://localhost:2368/ghost"
+    "baseUrl": "http://localhost:2368/ghost",
+    "version": ""
   }
 }
