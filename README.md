@@ -41,5 +41,6 @@ Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/issues
 ## VTR
 ### Backstopjs
  1. You should have to execute previously any testing automation
- 2. npm run-script  run:comparation
-
+ 2. npm run-script  run:comparation reference
+ 3. npm run-script  run:comparation krakenghost/vtr
+~~~~

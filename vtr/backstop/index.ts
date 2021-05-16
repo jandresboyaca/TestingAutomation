@@ -1,24 +1,22 @@
 import fs from "fs";
+import path from "path";
 import backstop, {Config, Scenario} from "backstopjs";
 
-let resource = 'reference/';
+let resource = process.argv[2];
+let resourceNavigable = path.join(__dirname, '../../', process.argv[2]);
 let resourceFiles = fs.readdirSync(resource);
-
 let versionBase = resourceFiles[0];
 let versionToCompare = resourceFiles[1];
 let arrayScenariosBS: Scenario[] = [];
-console.log(versionBase, versionToCompare);
 
-fs.readdir(resource + versionBase, (err, files) => {
+fs.readdir(`${resourceNavigable}/${versionBase}`, (err, files) => {
     files.forEach(featurePath => {
 
-        fs.readdirSync(`${resource + versionBase}/${featurePath}`).forEach(scenario => {
+        fs.readdirSync(`${resourceNavigable}/${versionBase}/${featurePath}`).forEach(scenario => {
 
-            fs.readdirSync(`${resource + versionBase}/${featurePath}/${scenario}`).forEach(screenShoot => {
-                let base = `/${resource + versionBase}/${featurePath}/${scenario}/${screenShoot}`;
-
-                let toCompare = `/${resource + versionToCompare}/${featurePath}/${scenario}/${screenShoot}`;
-
+            fs.readdirSync(`${resourceNavigable}/${versionBase}/${featurePath}/${scenario}`).forEach(screenShoot => {
+                let base = `/${resource}/${versionBase}/${featurePath}/${scenario}/${screenShoot}`;
+                let toCompare = `/${resource}/${versionToCompare}/${featurePath}/${scenario}/${screenShoot}`;
                 arrayScenariosBS.push({
                     label: base,
                     url: toCompare,
