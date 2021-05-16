@@ -6,6 +6,7 @@
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --headless",
+    "run:comparation" : "npx  tsc  && node vtr/backstop/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,10 +20,13 @@
   },
   "homepage": "https://github.com/jandresboyaca/TestingAutomation#readme",
   "devDependencies": {
+    "backstopjs": "^5.3.2",
     "cypress": "^4.2.0",
-    "faker": "^5.5.3"
+    "faker": "^5.5.3",
+    "typescript": "^4.2.4"
   },
   "dependencies": {
+    "@types/backstopjs": "^4.1.1",
     "cypress-log-to-output": "^1.1.2",
     "cypress-plugin-tab": "^1.0.5"
   }
