@@ -1,5 +1,31 @@
 # Funcionalidades
 
+## Descripción de las funcionalidades de GHOST Semana 6
+
+Las funcionalidades incluidas para esta semana son: 
+
+**_Login_** 
+
+- Email(ok y errado) - Password(ok y errado) 
+
+**_Pagina_** 
+
+- Configuraciones, creaciones y publicaciones 
+
+**_Post_** 
+
+- Creación, Borradores y Configuraciones 
+
+**_Staff_** 
+
+- Invitaciones (Ok y Fallidas) 
+
+**_Tag_** 
+
+- Creación de Tags y eliminaciones 
+
+## Descripción de las funcionalidades de GHOST Semana 5
+
 1. Administración de post: Modulo de administración de post, en donde se pueden evidenciar todos los posts actuales y sus posibles estados; permite realizar la programación del post e inclusive dejarlos como borradores
 2. Administración de paginas: Modulo de administración de paginas, similar a los posts, las paginas permitirán un espacio único para el contenido que se desee en un URL general
 3. Administración de tags: Modulo de administración de tags, es el encargado de tipificar las publicaciones que se desee
