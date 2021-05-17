@@ -2,9 +2,9 @@ const username = Cypress.env('username') || ''
 const password = Cypress.env('password') || ''
 const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
 const loginUrl = baseUrl + '/#/signin';
+const version = Cypress.env('version') || 'v3.3.0';
 
 export const login = () => {
-
     cy.clearCookies();
 
     cy.visit(loginUrl).then((win) => {
@@ -18,4 +18,20 @@ export const login = () => {
         cy.url().should('eq', baseUrl + '/#/site')
     });
     cy.wait(1000);
+}
+
+export const screenshot = (funcionality, scenario, stepName) => {
+    var screenshotImage;
+    cy.screenshot(stepName, {
+        onAfterScreenshot(imagedata, props) {
+            screenshotImage = props
+        }
+    }).then( (data)=> {
+        cy.task('saveScenerio', { 
+            imagedata: screenshotImage,
+            funcionality: funcionality,
+            scenario: scenario,
+            version: version
+        })
+    })
 }

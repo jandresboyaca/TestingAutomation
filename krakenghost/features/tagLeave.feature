@@ -1,7 +1,8 @@
-Feature: Tags Board
+Feature: Tag Leave
 
   @user1 @web
-  Scenario: Tags Board
+  Scenario: Tag Leave
+    Given I set scenario "tagLeave"
     Given I navigate to page "<GHOST_URL_SIGIN>"
     Then I enter "<GHOST_USER>" into input field having class name "email"
     Then I enter "<GHOST_PASSWORD>" into input field having class name "password"

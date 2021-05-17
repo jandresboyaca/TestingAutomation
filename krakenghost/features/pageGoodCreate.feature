@@ -1,7 +1,8 @@
-Feature: Page Board
+Feature: Page Good Create
 
   @user1 @web
-  Scenario: Page Board
+  Scenario: Page Good Create
+    Given I set scenario "pageGoodCreate"
     Given I navigate to page "<GHOST_URL_SIGIN>"
     Then I enter "<GHOST_USER>" into input field having class name "email"
     Then I enter "<GHOST_PASSWORD>" into input field having class name "password"

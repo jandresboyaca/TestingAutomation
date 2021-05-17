@@ -1,6 +1,8 @@
-const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
+const baseUrl = Cypress.env('baseUrl') || "http://localhost:2368/ghost"
 const util = require('../utils.js')
 const faker = require('faker')
+let stepName = '';
+
 
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
 
@@ -13,13 +15,19 @@ context('Create Invitacion fallida', () => {
         Cypress.Cookies.preserveOnce(cookieSessionName);
     })
 
+    afterEach(() => {
+        util.screenshot("Staff","InvitacionFallida", stepName)
+    })
+
     it('Abrir vista de  staff', () => {
+        stepName = "AbrirStaffList"
         cy.visit(`${baseUrl}/#/staff`)
         cy.wait(2000)  
         cy.url().should('eq', `${baseUrl}/#/staff`)
     })
 
     it('Invitar nueva persona', () => {
+        stepName = "Invitar"
         cy.get('button.gh-btn.gh-btn-green')
         .click()
 
@@ -29,6 +37,7 @@ context('Create Invitacion fallida', () => {
     })
 
     it('Introducir email invalido', () => {
+         stepName = "IntroducirEmail"
          cy.get('section.modal-content.modal-content.invite-new-user.ember-view')
          .within(() => {
             cy.get('input[name="email"]')
@@ -40,6 +49,7 @@ context('Create Invitacion fallida', () => {
     })
 
     it('Validar Mensaje de error', () => {
+        stepName = "Validar"
         cy.get('section.modal-content.modal-content.invite-new-user.ember-view')
          .within(() => {
             cy.get('.retry_svg__retry-animated')

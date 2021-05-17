@@ -2,6 +2,7 @@ Feature: Staff invitation
 
   @user1 @web
   Scenario: As a user
+    Given I set scenario "staffInvitateSuccess"
     Given I navigate to page "<GHOST_URL_SIGIN>"
     Then I enter "<GHOST_USER>" into input field having class name "email"
     Then I enter "<GHOST_PASSWORD>" into input field having class name "password"

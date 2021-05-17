@@ -1,3 +1,6 @@
+const fs = require('fs')
+const path = require('path')
+
 /// <reference types="cypress" />
 // ***********************************************************
 // This example plugins/index.js can be used to load plugins
@@ -17,6 +20,32 @@
  */
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
+  on('task', {
+    // deconstruct the individual properties
+    saveScenerio({ imagedata, funcionality,  scenario, version}) {
+      
+      const dir = `${path.join(__dirname, '../../reference')}/${version}`;
+
+      // version folder
+      createFolder(dir)
+
+      // Functionality folder
+      createFolder(`${dir}/${funcionality}`)
+
+      // Scenario folder 
+      createFolder(`${dir}/${funcionality}/${scenario}`)
+     
+      fs.rename(imagedata.path, `${dir}/${funcionality}/${scenario}/${imagedata.name}.png`, () => {
+        //console.log('Saved!');
+      });
+      
+      return null
+    },
+  })
+
+  function createFolder(path) {
+    if (!fs.existsSync(path)) {
+      fs.mkdirSync(path);
+    }
+  }
 }
