@@ -1,0 +1,14 @@
+{
+  "name": "ResembleJsGhost",
+  "version": "1.0.0",
+  "description": "VTR",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Carlos Andrés Castiblanco",
+  "license": "ISC",
+  "dependencies": {
+    "resemblejs": "^3.2.5"
+  }
+}
