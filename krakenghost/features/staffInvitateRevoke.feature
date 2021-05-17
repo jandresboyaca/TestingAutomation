@@ -1,7 +1,8 @@
-Feature: Staff Edit Ghost User
+Feature: Staff Invitate Revoke
 
   @user1 @web
-  Scenario: As a user
+  Scenario: Staff Invitate Revoke
+    Given I set scenario "staffInvitateRevoke"
     Given I navigate to page "<GHOST_URL_SIGIN>"
     Then I enter "<GHOST_USER>" into input field having class name "email"
     Then I enter "<GHOST_PASSWORD>" into input field having class name "password"

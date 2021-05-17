@@ -1,7 +1,8 @@
-Feature: Page Board Settings
+Feature: Page Set Url Config
 
   @user1 @web
-  Scenario: Page Board Settings
+  Scenario: Page Set Url Config
+    Given I set scenario "pageSetUrlConfig"
     Given I navigate to page "<GHOST_URL_SIGIN>"
     Then I enter "<GHOST_USER>" into input field having class name "email"
     Then I enter "<GHOST_PASSWORD>" into input field having class name "password"

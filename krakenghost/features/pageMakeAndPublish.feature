@@ -1,7 +1,8 @@
-Feature: Page Board Publish
+Feature: Page Make And Publish
 
   @user1 @web
-  Scenario: Page Board Publish
+  Scenario: Page Make And Publish
+    Given I set scenario "pageMakeAndPublish"
     Given I navigate to page "<GHOST_URL_SIGIN>"
     Then I enter "<GHOST_USER>" into input field having class name "email"
     Then I enter "<GHOST_PASSWORD>" into input field having class name "password"

@@ -1,7 +1,8 @@
-Feature: Shared board connection
+Feature: Post Click All Button Edit Post
 
   @user1 @web
-  Scenario: As a first user
+  Scenario: Post Click All Button Edit Post
+    Given I set scenario "postClickAllButtonEditPost"
     Given I navigate to page "<GHOST_URL_SIGIN>"
     Then I enter "<GHOST_USER>" into input field having class name "email"
     Then I enter "<GHOST_PASSWORD>" into input field having class name "password"

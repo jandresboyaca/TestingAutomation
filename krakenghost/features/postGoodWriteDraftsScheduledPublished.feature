@@ -1,7 +1,8 @@
-Feature: Post Drafts and Settings
+Feature: Post Good Write Drafts Scheduled Published
 
   @user1 @web
-  Scenario: Post Drafts and Settings
+  Scenario: Post Good Write Drafts Scheduled Published
+    Given I set scenario "postGoodWriteDraftsScheduledPublished"
     Given I navigate to page "<GHOST_URL_SIGIN>"
     Then I enter "<GHOST_USER>" into input field having class name "email"
     Then I enter "<GHOST_PASSWORD>" into input field having class name "password"
