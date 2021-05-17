@@ -7,6 +7,7 @@ const {options, firstVersion, secondVersion, dir} = config;
 async function executeTest() {
     let resultInfo = {};
     let datetime = new Date().toISOString().replace(/:/g, ".");
+    console.log(dir.concat("/",firstVersion));
     await fs.readdir(dir.concat("/",firstVersion), async (err, files) => {
         for (let f of files) {
             var scenario = await dir.concat("/",firstVersion,"/",f);

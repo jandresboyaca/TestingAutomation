@@ -43,4 +43,11 @@ Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/issues
  1. You should have to execute previously any testing automation
  2. npm run-script  run:comparation reference
  3. npm run-script  run:comparation krakenghost/vtr true
+ 
+ ### Resemblejs
+  1. You should have to execute previously any testing automation
+  2. cd resemblejsghost
+  3. npm install
+  4. node index.js
+  5. see results in results folder
 ~~~~
