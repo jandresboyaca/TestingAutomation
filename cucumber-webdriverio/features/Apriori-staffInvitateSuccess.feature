@@ -15,13 +15,12 @@ Feature: Staff Edit User Success pool de datos a-priori
 
     Examples:
       | EMAIL_USER  |
-      | prueba1@test.com |
-      | prueba2@test.com |
-      | prueba3@test.com |
-      | prueba4@test.com |
-      | prueba5@test.com |
-      | prueba6@test.com |
-      | prueba7@test.com |
-      | prueba8@test.com |
-      | prueba9@test.com |
-      | prueba10@test.com |
+      | prueba21@test.com |
+      | prueba22@test.com |
+      | prueba24@test.com |
+      | prueba25@test.com |
+      | prueba26@test.com |
+      | prueba27@test.com |
+      | prueba28@test.com |
+      | prueba29@test.com |
+      | prueba30@test.com |
