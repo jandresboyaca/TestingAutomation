@@ -69,10 +69,16 @@ When(/^I click on element having link text (.*)$/ , (linkText) => {
         classObject.click();
     }
 });
-
+let count = 0;
 When(/^I click on element having article (.*)$/ , (classname) => {
-    var classObject = $(`article[class="${classname}"]`);
-    classObject.click();
+    if(count == 0){
+        var classObject = $(`article[class="${classname}"]`);
+        classObject.click();
+    } else {
+        var classObject = $$(`article[class="${classname}"]`);
+        classObject[classObject.length - 1].click();
+    }
+    count++;
 });
 
 Then('I expect to not be able to login', () => {
