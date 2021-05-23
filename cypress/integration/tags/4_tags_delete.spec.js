@@ -1,6 +1,5 @@
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
 const baseUrl = Cypress.env('baseUrl') || "http://localhost:2368/ghost"
-var faker = require('faker');
 var util = require('../utils.js')
 let stepName = '';
 
@@ -14,7 +13,8 @@ context('Edit tags', () => {
     })
 
     afterEach(() => {
-        util.screenshot("Tags","DeleteTag", stepName)
+        //Disabled to week 7 to avoid the file watcher
+        //util.screenshot("Tags", "DeleteTag", stepName)
     })
 
     it(`given a navigation bar when tags is valid then go into tags component`, function () {

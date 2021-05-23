@@ -1,6 +1,7 @@
 {
   "projectId": "Testing Automation",
   "chromeWebSecurity": false,
+  "defaultCommandTimeout": 10000,
   "env": {
     "username": "admin@test.com",
     "password": "N6.$!tMr-SBNV4N",
