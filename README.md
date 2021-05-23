@@ -10,9 +10,12 @@ Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/issues
 # How to run it?
 
 ## Initial Config
+version
+ * 3.3.0
+ * 3.42.5
 
-1. docker run -v /var/lib/ghost/content  --entrypoint "bin/sh" --name data-ghost deploysoft/ghost-backup:1
-2. docker run -p 2368:2368 --volumes-from data-ghost deploysoft/ghost:3.3.0
+1. docker run -v /var/lib/ghost/content  --entrypoint "bin/sh" --name validData-ghost deploysoft/ghost-backup:{version}
+2. docker run -p 2368:2368 --volumes-from validData-ghost ghost:{version}
 3. git clone https://github.com/jandresboyaca/TestingAutomation.git
 
 
