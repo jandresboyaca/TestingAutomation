@@ -1,5 +1,15 @@
 # Funcionalidades
 
+## Descripción de las estrategias de generación de datos usadas para la automatización de GHOST Semana 7
+
+### Descripción de cómo los 120 escenarios son generados, en una entrada en la wiki
+
+### Instrucciones para ejecutar los escenarios
+
+### Reporte (en el sistema de registro) de las incidencias encontradas
+
+Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/issues)
+
 ## Descripción de las funcionalidades de GHOST Semana 6
 
 Las funcionalidades incluidas para esta semana son: 
