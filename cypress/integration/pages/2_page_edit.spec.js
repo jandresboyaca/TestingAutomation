@@ -6,13 +6,10 @@ let stepName = '';
 var dataPool = require('./data-pool/data-pool')
 
 Object.keys(dataPool).forEach(strategy => {
-    console.log('strategy', strategy, '\n');
+    describe(`Using strategy ${strategy}`, () => {
+      dataPool[strategy].forEach(data => {
 
-    dataPool[strategy].forEach(data => {
-        console.log('Iniciando ejecución data pool ' + strategy + '\n');
-        //console.log(data + '\n');
-
-        context('Editar Page', () => {
+        context('Editar Page ' + strategy, () => {
             before(() => {
                 util.login();
             })
@@ -33,7 +30,7 @@ Object.keys(dataPool).forEach(strategy => {
             })
 
             it('Selecionar Page', () => {
-                stepName = "SelecionarPage" + strategy
+                stepName = "SelecionarPage" + '-' + strategy
                 cy.get('li.gh-list-row.gh-posts-list-item.ember-view')
                     .first().click({force: true})
                     .within(() => {
@@ -45,17 +42,18 @@ Object.keys(dataPool).forEach(strategy => {
             })
 
             it('Editar titulo Page', () => {
-                stepName = "EditarPage" + strategy
-                let sentence = faker.lorem.sentence();
+                stepName = "EditarPage" + '-' + strategy
+                let sentence = strategy === 'random' ? data.title() : data.title;
                 cy.get('textarea')
                     .first()
                     .clear()
-                    .type(sentence)
+                cy
+                    .type(sentence, { parseSpecialCharSequences: false }).wait(1000)
                     .should('have.value', sentence)
             })
 
             it('Cerrar pagina', () => {
-                stepName = "CerrarPage" + strategy
+                stepName = "CerrarPage" + '-' + strategy
                 cy.get('.gh-btn.gh-btn-outline.gh-publishmenu-trigger.ember-basic-dropdown-trigger.ember-view')
                     .click({force: true})
 
@@ -66,9 +64,8 @@ Object.keys(dataPool).forEach(strategy => {
                 });
             })
         })
-        console.log('Finaliza ejecución data pool ' + strategy + '\n');
-
     })
+  })
 });
 
 

@@ -5,13 +5,10 @@ let stepName = '';
 var dataPool = require('./data-pool/data-pool')
 
 Object.keys(dataPool).forEach(strategy => {
-    console.log('strategy', strategy, '\n');
+    describe(`Using strategy ${strategy}`, () => {
+      dataPool[strategy].forEach(data => {
 
-    dataPool[strategy].forEach(data => {
-        console.log('Iniciando ejecución data pool ' + strategy + '\n');
-        //console.log(data + '\n');
-
-        context('Create Page', () => {
+        context('Create Page ' + strategy, () => {
             before(() => {
                 util.login();
             })
@@ -25,14 +22,14 @@ Object.keys(dataPool).forEach(strategy => {
             })
 
             it('Abrir lista de Page', () => {
-                stepName = "AbrirPage" + strategy
+                stepName = "AbrirPage" + '-' + strategy
                 cy.visit(`${baseUrl}/#/pages`)
                 cy.wait(2000)  
                 cy.url().should('eq', `${baseUrl}/#/pages`)
             })
 
             it('Abrir vista para crear page', () => {
-                stepName = "CrearPage" + strategy
+                stepName = "CrearPage" + '-' +  strategy
                 cy.get('a[href*="#/editor/page"]')
                 .should('have.class', 'gh-btn gh-btn-green')
                 .first()
@@ -43,21 +40,20 @@ Object.keys(dataPool).forEach(strategy => {
             })
 
             it('Agregar datos a la nueva page', () => {
-                stepName = "AgregarDatos" + strategy
-                let sentence = strategy === 'random' ? data() : data;
+                stepName = "AgregarDatos" + '-' +  strategy
+                let sentence = strategy === 'random' ? data.title() : data.title;
                 cy.get('textarea')
                     .first()
-                    .type(sentence)
+                    .type(sentence, { parseSpecialCharSequences: false }).wait(1000)
                     .should('have.value',sentence)
             })
 
             it('Publicar pagina', () => {
-                stepName = "publicar" + strategy
+                stepName = "publicar" + '-' +  strategy
                 cy.get('div.koenig-editor__editor').click();
             })
         })
-        console.log('Finaliza ejecución data pool ' + strategy + '\n');
-
     })
+  })
 });
 

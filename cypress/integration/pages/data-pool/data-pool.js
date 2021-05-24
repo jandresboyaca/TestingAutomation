@@ -13,9 +13,13 @@ const fakerLoremMethods = [
   faker.lorem.paragraphs,
   faker.lorem.text,
   faker.lorem.lines,
-  () => null
+  () => faker.datatype.json().toString()
 ];
 
+
+/*
+ * param: strategy: 'apriori' | 'pseudo' | 'random'
+ */
 function generateDataPool(strategy) {
   const data = [];
   for (let index = 0; index < NUM_SCENARIOS; index++) {
@@ -27,10 +31,13 @@ function generateDataPool(strategy) {
   return data;
 }
 
+// para generar los datos apriori descomentar el siguiente metodo y copiar el resultado en el archivo data-a-priori.json
+// generateDataPool('apriori');
+
 const dataPool = {
   'apriori': data_a_priori,
   'pseudo': generateDataPool('pseudo'),
   'random': generateDataPool('random')
 }
 
-export default dataPool
+module.exports = dataPool;
