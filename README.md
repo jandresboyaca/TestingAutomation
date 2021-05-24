@@ -90,6 +90,11 @@ Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/wiki/C
 
 Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/tree/main/cucumber-webdriverio#readme).
 
+### Cypress 
+#### Tags
+
+Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/blob/main/cypress/integration/tags/README.md).
+
 ### Reporte (en el sistema de registro) de las incidencias encontradas
 
 Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/issues)
