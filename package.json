@@ -6,7 +6,7 @@
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --headless",
-    "run:comparation" : "npx  tsc  && node vtr/backstop/index.js",
+    "run:comparation": "npx  tsc  && node vtr/backstop/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
