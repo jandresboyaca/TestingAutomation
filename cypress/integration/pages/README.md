@@ -19,7 +19,7 @@ Para el feature pages contendra la propiedad "title"
 
 Se ha usado "faker" como herramienta para la generacion de datos aleatoreos. 
 En las 3 estrategias se ha utilizado una funcion diferente de faker para la generacion de data aplicada al campo title de las pages
-### *a-priori* and *pseudo-random*
+### *a-priori*, *pseudo-random* y *random*
 ```
 fakerLoremMethods = [
   faker.lorem.word,
