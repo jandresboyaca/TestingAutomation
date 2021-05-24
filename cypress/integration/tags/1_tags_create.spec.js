@@ -18,8 +18,7 @@ Object.keys(data).forEach(strategy => {
                 })
 
                 afterEach(() => {
-                    //Disabled to week 7 to avoid the file watcher
-                    //util.screenshot("Tags","CreateTagSuccess", stepName)
+                    util.screenshot("Tags","CreateTagSuccess", stepName)
                 })
 
                 it(`given a navigation bar when tags is valid then go into tags component`, () => {

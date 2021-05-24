@@ -18,7 +18,7 @@ Object.keys(data).forEach(strategy => {
                 })
 
                 afterEach(() => {
-                    //util.screenshot("Tags", "EditTag", stepName)
+                    util.screenshot("Tags", "EditTag", stepName)
                 })
 
                 it(`given a navigation bar when tags is valid then go into tags component`, function () {
