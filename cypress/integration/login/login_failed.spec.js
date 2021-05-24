@@ -1,6 +1,6 @@
 var faker = require('faker');
-const loginUrl = baseUrl + '/#/signin';
 const baseUrl = Cypress.env('baseUrl');
+const loginUrl = baseUrl + '/#/signin';
 const version = Cypress.env('version') || 'GhostVersion3';
 let stepName = '';
 
