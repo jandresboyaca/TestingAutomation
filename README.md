@@ -95,6 +95,10 @@ Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/tree/m
 
 Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/blob/main/cypress/integration/tags/README.md).
 
+#### Pages
+
+Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/blob/main/cypress/integration/pages/README.md).
+
 ### Reporte (en el sistema de registro) de las incidencias encontradas
 
 Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/issues)
