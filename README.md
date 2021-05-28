@@ -27,26 +27,38 @@ Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/issues
 3. Descargar la fuente de la suit de pruebas
 - `` git clone https://github.com/jandresboyaca/TestingAutomation.git``
 
+___
+
 ### Ejecución de pruebas
 
-#### Cypress (Automated Component)
+#### Automated Component - Cypress 
 
-0. Ir a la rama automatedComponent 
-   - `` git checkout automatedComponent``
 1. Ir dentro del directorio de la suit de pruebas de cypess
    - `` cd TestingAutomation ``
-2. Instalar las dependecias necesarias
+2. Ir a la rama automatedComponent
+   - `` git checkout automatedComponent``
+3. Instalar las dependecias necesarias
    - `` npm install ``
-3. Ejecutar cypress
+4. Ejecutar cypress
+   - ``npx cypress run ``
+ ___
+
+#### Automated E2E  - Cypress
+
+1. Ir dentro del directorio de la suit de pruebas de cypess
+   - `` cd TestingAutomation ``
+2. Ir a la rama e2eAutomated
+   - `` git checkout e2eAutomated``
+3. Instalar las dependecias necesarias
+   - `` npm install ``
+4. Actualizar la variable de entorno de cypress.json con la version a probar [version desplegada previamente](#descargar-aplicaciones) Ej.
+   - "version": "3.0.0"
+   - "version": "3.42.5"
+  
+5. Ejecutar cypress
    - ``npx cypress run ``
 
-#### Kraken
-
-0. Realizar la configuración previa de kraken en su maquina
-1. Ir dentro del directorio de la suit de pruebas de kraken
-- ``cd krakenghost``
-2. Ejecutar kraken
-- ``bundle exec kraken-mobile run --properties=properties.json``
+___
 
 #### VTR (Visual Testing Regration)
 
