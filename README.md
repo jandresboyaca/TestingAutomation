@@ -64,7 +64,7 @@ ___
 
 ### Backstopjs
 
-0. Debe ejecutar previamente  las pruebas [E2E](#automated-e2e-cypress) para ambas versiones de no ser asi puede continuar y validar el ultimo vtr ejecutado y versionado
+0. Debe ejecutar previamente  las pruebas [E2E](#automated-e2e----cypress) para ambas versiones de no ser asi puede continuar y validar el ultimo vtr ejecutado y versionado
 1. Ir dentro del directorio de la suit de pruebas 
    - `` cd TestingAutomation ``
 2. Ir a la rama vtrAutomated
@@ -75,7 +75,7 @@ ___
 
 ### Resemblejs
 
-0. Debe ejecutar previamente  las pruebas [E2E](#automated-e2e-cypress) para ambas versiones de no ser asi puede continuar y validar el ultimo vtr ejecutado y versionado
+0. Debe ejecutar previamente  las pruebas [E2E](#automated-e2e----cypress) para ambas versiones de no ser asi puede continuar y validar el ultimo vtr ejecutado y versionado
 1. Ir dentro del directorio de la suit de pruebas 
    - `` cd TestingAutomation ``
 2. Ir al directorio de resemble
