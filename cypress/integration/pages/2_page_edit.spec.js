@@ -19,7 +19,7 @@ context('Editar Page', () => {
     })
 
     it('Selecionar Page', () => {
-        cy.get('li.gh-list-row.gh-posts-list-item.ember-view')
+        cy.get('.gh-posts-list-item')
             .first().click({force: true})
             .within(() => {
                 cy.get('a')

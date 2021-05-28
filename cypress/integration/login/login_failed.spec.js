@@ -28,7 +28,7 @@ context('Login failed', () => {
         });
         cy.wait(1000)
         cy.get('p.main-error').then(($elements) => {
-            expect($elements.first()[0].innerText.trim()).to.equal('Access denied.'.trim());
+            expect($elements.first()[0].innerText.trim()).to.equal('There is no user with that email address.'.trim());
         });
     })
 })
