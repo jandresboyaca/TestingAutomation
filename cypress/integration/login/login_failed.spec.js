@@ -1,6 +1,7 @@
 var faker = require('faker');
+
+const baseUrl = Cypress.config('baseUrl') || "http://localhost:2368/ghost"
 const loginUrl = baseUrl + '/#/signin';
-const baseUrl = Cypress.env('baseUrl');
 const version = Cypress.env('version') || 'GhostVersion3';
 let stepName = '';
 
@@ -48,8 +49,6 @@ context('Login failed', () => {
             cy.root().submit();
         });
         cy.wait(1000)
-        cy.get('p.main-error').then(($elements) => {
-            expect($elements.first()[0].innerText.trim()).to.equal('Access denied.'.trim());
-        });
+        cy.get('p.main-error').should('have.css', 'color', 'rgb(240, 82, 48)');
     })
 })
