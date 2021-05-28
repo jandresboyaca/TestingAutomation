@@ -45,7 +45,7 @@ ___
 
 #### Automated E2E  - Cypress
 
-1. Ir dentro del directorio de la suit de pruebas de cypess
+1. Ir dentro del directorio de la suit de pruebas 
    - `` cd TestingAutomation ``
 2. Ir a la rama e2eAutomated
    - `` git checkout e2eAutomated``
@@ -60,35 +60,32 @@ ___
 
 ___
 
-#### VTR (Visual Testing Regration)
+#### Automated VTR (Visual Testing Regration)
 
 ### Backstopjs
 
-1. You should have to execute previously any testing automation
-2. npm run-script run:comparation reference
-3. npm run-script run:comparation krakenghost/vtr true
+0. Debe ejecutar previamente  las pruebas [E2E](#automated-e2e-cypress) para ambas versiones de no ser asi puede continuar y validar el ultimo vtr ejecutado y versionado
+1. Ir dentro del directorio de la suit de pruebas 
+   - `` cd TestingAutomation ``
+2. Ir a la rama vtrAutomated
+   - `` git checkout vtrAutomated``
+3. Ejecutar el VTR
+   - ``npm run-script run:comparation reference``
+4. El reporte del VTR se abrira automaticamente cuando haya finalizado
 
 ### Resemblejs
 
-1. You should have to execute previously any testing automation
-2. cd resemblejsghost
-3. npm install
-4. node index.js
-5. see results in results folder
+0. Debe ejecutar previamente  las pruebas [E2E](#automated-e2e-cypress) para ambas versiones de no ser asi puede continuar y validar el ultimo vtr ejecutado y versionado
+1. Ir dentro del directorio de la suit de pruebas 
+   - `` cd TestingAutomation ``
+2. Ir al directorio de resemble
+   - ``cd resemblejsghost`` 
+3. Instalar las dependecias
+   -`` npm install ``
+4. Ejecutar el comando de inicio
+   - ``node index.js``
+6. Abrir el archivo del reporte dentro de la carpeta
 
-Para mas
-detalle [ver](https://github.com/jandresboyaca/TestingAutomation/wiki/Como-los-120-escenarios-de-la-semana-7-son-generados)
-.
-
-## Instrucciones para ejecutar los escenarios
-
-### Cucumber-webdriverio
-
-Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/tree/main/cucumber-webdriverio#readme).
-
-### Reporte (en el sistema de registro) de las incidencias encontradas
-
-Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/issues)
 
 ## Pros y Contras
 
