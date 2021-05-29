@@ -15,7 +15,7 @@ Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/issues
 * 3.3.0
 * 3.42.5
 
-### Descargar aplicaciones
+## Descargar aplicaciones
 
 1. Descargar la pre-configuración de la información para la aplicacion segun la version remplzar el placeholder **
    {version}**
@@ -29,9 +29,9 @@ Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/issues
 
 ___
 
-### Ejecución de pruebas
+## Ejecución de pruebas
 
-#### Automated Component - Cypress 
+### Automated Component - Cypress 
 
 1. Ir dentro del directorio de la suit de pruebas de cypess
    - `` cd TestingAutomation ``
@@ -43,7 +43,7 @@ ___
    - ``npx cypress run ``
  ___
 
-#### Automated E2E  - Cypress
+### Automated E2E  - Cypress
 
 1. Ir dentro del directorio de la suit de pruebas 
    - `` cd TestingAutomation ``
@@ -60,9 +60,9 @@ ___
 
 ___
 
-#### Automated VTR (Visual Testing Regration)
+### Automated VTR (Visual Testing Regration)
 
-### Backstopjs
+#### Backstopjs
 
 0. Debe ejecutar previamente  las pruebas [E2E](#automated-e2e----cypress) para ambas versiones de no ser asi puede continuar y validar el ultimo vtr ejecutado y versionado
 1. Ir dentro del directorio de la suit de pruebas 
@@ -73,7 +73,7 @@ ___
    - ``npm run-script run:comparation reference``
 4. El reporte del VTR se abrira automaticamente cuando haya finalizado
 
-### Resemblejs
+#### Resemblejs
 
 0. Debe ejecutar previamente  las pruebas [E2E](#automated-e2e----cypress) para ambas versiones de no ser asi puede continuar y validar el ultimo vtr ejecutado y versionado
 1. Ir dentro del directorio de la suit de pruebas 
@@ -85,6 +85,26 @@ ___
 4. Ejecutar el comando de inicio
    - ``node index.js``
 6. Abrir el archivo del reporte dentro de la carpeta
+
+
+____
+### Estrategia de datos
+
+#### Apriori Generador
+
+#### Información valida para escenarios ghost
+1. Ir dentro del directorio de datos
+   - ``cd data``
+2. Ejecutar la estrategia
+   - ``node valid-data.js a-priori``
+3. Utilizar la data generada
+
+#### Información invalida para escenarios ghost
+1. Ir dentro del directorio de datos
+   - ``cd data``
+2. Ejecutar la estrategia
+   - ``node invalid-data.js a-priori``
+3. Utilizar la data generada
 
 
 ## Pros y Contras
