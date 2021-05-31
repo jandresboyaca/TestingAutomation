@@ -1,3 +1,7 @@
+# Video de estrategia
+Para mas detaller [ver](https://youtu.be/UPaL75sm8O4)
+# Documento de estrategia
+Para mas descargar [descargar](https://github.com/jandresboyaca/TestingAutomation/blob/main/Estrategia.docx)
 # Escenarios de pruebas para la ejecución
 
 Para mas detalle [ver](https://github.com/jandresboyaca/TestingAutomation/wiki/Escenarios).
